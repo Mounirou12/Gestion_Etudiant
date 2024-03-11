@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}GestuEtud index{% endblock %}
+
+{% block body %}
+    <h1>Gestion des Etudiants</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Sexe</th>
+                <th>Filiere</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for gestu_etud in gestu_etuds %}
+            <tr>
+                <td>{{ gestu_etud.id }}</td>
+                <td>{{ gestu_etud.name }}</td>
+                <td>{{ gestu_etud.surname }}</td>
+                <td>{{ gestu_etud.sexe }}</td>
+                <td>{{ gestu_etud.filiere }}</td>
+                <td>
+                    <a href="{{ path('app_gestu_etud_show', {'id': gestu_etud.id}) }}">show</a>
+                    <a href="{{ path('app_gestu_etud_edit', {'id': gestu_etud.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a class="btn btn-primary" href="{{ path('app_gestu_etud_new') }}">Create new</a>
+{% endblock %}

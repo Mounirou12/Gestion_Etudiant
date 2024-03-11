@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}GestuEtud{% endblock %}
+
+{% block body %}
+    <h1>Modifier Etudiant</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ gestu_etud.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ gestu_etud.name }}</td>
+            </tr>
+            <tr>
+                <th>Surname</th>
+                <td>{{ gestu_etud.surname }}</td>
+            </tr>
+            <tr>
+                <th>Sexe</th>
+                <td>{{ gestu_etud.sexe }}</td>
+            </tr>
+            <tr>
+                <th>Filiere</th>
+                <td>{{ gestu_etud.filiere }}</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <a class="btn btn-primary" style="margin-bottom:10px" href="{{ path('app_gestu_etud_edit', {'id': gestu_etud.id}) }}">Edit</a>
+    <a class="btn btn-primary" style="margin-bottom:10px; margin-left:250px" href="{{ path('app_gestu_etud_index') }}">Back</a>
+
+
+    {{ include('gestu_etud/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit GestuEtud{% endblock %}
+
+{% block body %}
+    <h1>Edit GestuEtud</h1>
+
+    {{ include('gestu_etud/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_gestu_etud_index') }}">back to list</a>
+
+    {{ include('gestu_etud/_delete_form.html.twig') }}
+{% endblock %}

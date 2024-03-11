@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New GestuEtud{% endblock %}
+
+{% block body %}
+    <h1>Nouveau Etudiant</h1>
+
+    {{ include('gestu_etud/_form.html.twig') }}
+
+    <a style="margin-top:10px" class="btn btn-primary" href="{{ path('app_gestu_etud_index') }}">Back</a>
+{% endblock %}
